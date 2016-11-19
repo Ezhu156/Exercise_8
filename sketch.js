@@ -12,7 +12,8 @@ var rawTxt; //
 var joined; //
 var parsedStory; //
 var story; //
-
+var f;
+var word;
 
 var beginNum, endNum; //
 
@@ -53,7 +54,7 @@ function setup() {
   var app = cleanerapp.replace(/--/g, '');
   var ending = cleanerend.replace(/--/g, '');
 
-  var f = fiv.replace(/,/g, '#');
+  f = fiv.replace(/,/g, '#');
   var s = sev.replace(/,/g, '#');
   var t = ten.replace(/,/g, '#');
   var a = app.replace(/,/g, '#');
@@ -66,9 +67,36 @@ function setup() {
   console.log(a);
   console.log(e);
 
+  wordf = f.match(/Douglass/g);
+  words = s.match(/Douglass/g);
+  wordt = t.match(/The/g);
+  worda = a.match(/Douglass/g);
+  //console.log(wordf)
+
+
 
 } //end setup
 
 function draw() {
+  noStroke();
+  fill(183, 124, 167);
+  for (var i = 0; i <= wordf.length; i++) {
+    ellipse(random(width), i*25, 10, 10);
+  } //end for five
+  fill(130, 184, 167);
+  for (var j = 0; j <= words.length; j++) {
+    ellipse(random(width), j*30, 15, 15);
+  } //end for seven
+  fill(50, 174, 217);
+  for (var k = 0; k <= wordt.length; k++) {
+    ellipse(random(width), k*35, 20, 20);
+  } //end for ten
+  fill(70, 92, 110);
+  for (var l = 0; l <= worda.length; l++) {
+    ellipse(random(width), l*40, 25, 25);
+  } //end for appendix
+
+  
+    noLoop();
 
 } //end draw
